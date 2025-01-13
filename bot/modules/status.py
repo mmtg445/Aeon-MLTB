@@ -1,5 +1,4 @@
 from time import time
-
 from psutil import cpu_percent, disk_usage, virtual_memory
 
 from bot import bot_start_time, intervals, status_dict, task_dict, task_dict_lock
