@@ -1,11 +1,10 @@
-import contextlib
 from asyncio import iscoroutinefunction
 from html import escape
 from time import time
 
 from psutil import cpu_percent, disk_usage, virtual_memory
 
-from bot import bot_start_time, status_dict, task_dict, task_dict_lock
+from bot import bot_start_time, status_dict
 from bot.core.config_manager import Config
 from bot.helper.telegram_helper.button_build import ButtonMaker
 
@@ -136,7 +135,9 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
         buttons.data_button("➡️ Next", f"status {sid} nex", position="header")
         if tasks_no > 30:
             for i in [1, 2, 4, 6, 8, 10, 15]:
-                buttons.data_button(str(i), f"status {sid} ps {i}", position="footer")
+                buttons.data_button(
+                    str(i), f"status {sid} ps {i}", position="footer"
+                )
     if status != "All" or tasks_no > 20:
         for label, status_value in list(STATUSES.items()):
             if status_value != status:
