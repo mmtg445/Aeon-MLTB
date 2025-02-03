@@ -24,6 +24,7 @@ langcodes
 lxml
 motor
 mega
+mega-sdk
 mutagen
 markdown
 natsort
