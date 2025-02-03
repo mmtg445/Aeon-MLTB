@@ -23,8 +23,7 @@ httpx
 langcodes
 lxml
 motor
-mega
-mega
+mega.py
 mutagen
 markdown
 natsort
